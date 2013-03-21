@@ -19,6 +19,6 @@ title: Sandy98 at Github
 </ul>
 
 ## Blog
-* [Blog](blog.html)
+* [Blog](/blog)
 
 
