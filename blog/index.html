@@ -26,13 +26,17 @@ group: navigation
 </div>
 
 <div class="span3">
-    <h4>Entries</h4>
-    <ul class="posts" style="list-style: none;">
-      {% for post in site.posts %}
-        <li style="font-size: small;"><span>{{ post.date | date_to_string }}</span> &raquo;
-            <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
-      {% endfor %}
-    </ul>
-    <hr/>
-    <a class="btn btn-mini btn-primary pull-right" href="/">Home</a>
+    <div class="row-fluid">
+        <h4 style="text-align: center;">Entries</h4>
+        <ul class="posts" style="list-style: none; margin-top: 1em; margin-bottom: 1em;">
+          {% for post in site.posts %}
+            <li style="font-size: small; margin-bottom: 0.5em;"><span>{{ post.date | date_to_string }}</span> &raquo;
+                <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ul>
+        <hr/>
+        <div style="text-align: center;">
+            <a class="btn btn-mini btn-primary" href="/">Home</a>
+        </div>
+    </div>
 </div>
