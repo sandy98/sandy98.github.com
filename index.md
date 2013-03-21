@@ -10,9 +10,8 @@ title: Sandy98 at Github
 * [Node Simple Router](https://github.com/sandy98/node-simple-router)
 * [Guaycuru Web Server](https://github.com/sandy98/guaycuru)
 
-
 ## Gists
-<ul>
+<ul class="linkss-ul">
     <li><a href="https://gist.github.com/989424">Simple Clojure snippets</a></li>
     <li><a href="https://gist.github.com/2514318">Testing Iced CoffeeScript</a></li>
     <li><a href="https://gist.github.com/2575074">Square root (by Hal Abelson - SICP MIT course) - Python/Scheme versions</a></li>
@@ -20,5 +19,4 @@ title: Sandy98 at Github
 
 ## Blog
 * [Blog](/blog)
-
 
