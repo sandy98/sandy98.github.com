@@ -1,0 +1,71 @@
+---
+layout: page
+title : Regexp Test
+header : "Minimal Regular Expressions Test"
+group: navigation
+tagLine: "My shot on Javascript regular expressions"
+---
+{% include JB/setup %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Regex Test</title>
+    <!--<link rel="stylesheet" type="text/css" href="css/normalize.css">-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" type="text/css" href="css/site.css">
+</head>
+<body>
+    <div id="main" class="container">
+        <div class="span8" style="">
+            <div class="row" style="background: #eeeeee; padding: 1em; border-radius: 10px 10px 0 0;">
+                <form class="form-horizontal">
+                    <label for="regex-text">Regular Expression Pattern</label>
+                    <input type="text" class="regex" id="regex-text" style="width: 99%;"/>
+                    <hr/>
+                    <div class="row-fluid">
+                        <div class="span4">
+                            <label for="chk-global">Global</label>
+                            <input type="checkbox" class="modifiers" id="chk-global" />
+                        </div>
+                        <div class="span4">
+                            <label for="chk-insensitive">Case Insensitive</label>
+                            <input type="checkbox" class="modifiers" id="chk-insensitive" />
+                        </div>
+                        <div class="span4">
+                            <label for="chk-multiline">Multiline</label>
+                            <input type="checkbox" class="modifiers" id="chk-multiline" />
+                        </div>
+                    </div>
+                    <hr/>
+                    <label for="string-text">String to match</label>
+                    <textarea class="string" id="string-text"  style="width:99%; height: 5em;"></textarea>
+                </form>
+                <hr/>
+                <div class="row-fluid">
+                    <label for="cboExamples">Example patterns</label>
+                    <select id="cboExamples">
+                        <option value='^\s*\[\s*(.+?)\s+"(.+?)"\s*\]\s*$'>PGN Tagline</option>
+                        <option value='(?:(^0-0-0|^O-O-O)|(^0-0|^O-O)|(?:^([a-h])(?:([1-8])|(?:x([a-h][1-8])))(?:=?([NBRQ]))?)|(?:^([NBRQK])([a-h])?([1-8])?(x)?([a-h][1-8])))(?:(\+)|(#)|(\+\+))?$'>Chess move</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row" style="padding-left: 1em; background: #8b8b8b; color: #eeeeee;">
+                <h3>Results</h3>
+            </div>
+            <div id="result" class="row" style="background: #f5deb3;padding: 1em; padding-left: 3em; border-radius: 0 0 10px 10px;">
+            </div>
+        </div>
+    </div>
+
+<!--scripts section-->
+    <script type="text/javascript" src="js/coffee-script.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/coffeescript" src="js/index.coffee"></script>
+<!--end of scripts section-->
+
+</body>
+</html>
