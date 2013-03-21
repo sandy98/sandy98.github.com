@@ -17,6 +17,6 @@ title: Sandy98 at Github
     <li><a href="https://gist.github.com/2575074">Square root (by Hal Abelson - SICP MIT course) - Python/Scheme versions</a></li>
 </ul>
 
-## Blog
-* [Blog](/blog)
+## Tech Blog
+* [Blog Home](/blog)
 
