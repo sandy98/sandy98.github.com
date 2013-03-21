@@ -27,7 +27,19 @@ group: navigation
 
 <div class="span3">
     <div class="row-fluid">
-        <h4 style="text-align: center;">Entries</h4>
+        <p style="text-align: center;">
+            <img class="img-rounded" src="/img/users/sandy98.jpg" />
+        </p>
+        <h5 style="text-align: center;">{{site.author.name}}</h5>
+        <p class="well well-small">
+            I love programming computers and playing chess,
+            though I think I'm better at the former.
+            Nowadays busy diving into the wonderful MVC Javascript World,
+            even though I miss a bit C/C++ hacking...<br/>
+            Should you want to contact me, just drop me a line
+            <a href="mailto:esavoretti@gmail.com">here.</a>
+        </p>
+        <hr/>
         <ul class="posts" style="list-style: none; margin-top: 1em; margin-bottom: 1em;">
           {% for post in site.posts %}
             <li style="font-size: small; margin-bottom: 0.5em;"><span>{{ post.date | date_to_string }}</span> &raquo;
