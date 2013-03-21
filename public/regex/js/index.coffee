@@ -10,17 +10,22 @@ $ ->
     $('#result').html '<span class= "label label-important">NO MATCH</span>'
 
   show = (match) ->
-#    $('#result').css('background', '#f5deb3')
     $('#result').css('background', '#eeeeee')
     len = match.length - 1
     html = "<span class=\"label label-info\">#{match[0]}</span>&nbsp;"
     if len > 0
-      if $("#chk-global").attr("checked")
-        postclass = 'label-info'
-      else
-        postclass = 'label-success'
       for n in [1..len]
-        html += "<span class=\"label #{postclass}\">#{match[n]}</span>&nbsp;"
+        #console.log "match[#{n}] type = #{typeof match[n]}"
+        if (typeof match[n]) isnt "string"
+          postclass = 'label-important'
+          groupvalue = 'Null'
+        else
+    	    if $("#chk-global").attr("checked")
+            postclass = 'label-info'
+          else
+            postclass = 'label-success'
+          groupvalue = match[n]
+        html += "<span class=\"label #{postclass}\">#{groupvalue}</span>&nbsp;"
     $('#result').html html
 
   chkMatch = ->
@@ -42,11 +47,13 @@ $ ->
     catch e
       nullify()
 
-  $('#regex-text').on 'keyup', chkMatch
-  $('#string-text').on 'keypress', chkMatch
+  $('#regex-text, #string-text').on 'keyup keypress change blur focus', chkMatch
   $('.modifiers').on 'click', chkMatch
   $('#cboExamples').on 'change click', (ev) ->
     $('#regex-text').val $('#cboExamples').val()
+    chkMatch()
 
   $('#cboExamples')[0].selectedIndex = -1
-  i = setInterval chkMatch, 200
+
+  # i = setInterval chkMatch, 200
+  chkMatch()
