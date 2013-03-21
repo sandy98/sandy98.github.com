@@ -18,7 +18,7 @@ title: Sandy98 at Github
 </ul>
 
 ## Tech Blog
-* [Blog Home](/blog)
+* [Blog Home](/public/blog)
 
 ## JSFiddle
 * [My list of fiddles](http://jsfiddle.net/user/sandy98/fiddles/)
