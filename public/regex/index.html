@@ -30,13 +30,13 @@ tagLine: "My shot on Javascript regular expressions"
                     <br/><br/>
                     <div class="row-fluid">
                         <div class="span3">
-                            Global &nbsp; <input type="checkbox" class="modifiers" id="chk-global" />
+                            <label for="chk-global"><input type="checkbox" class="modifiers" id="chk-global" />&nbsp;Global</label>
                         </div>
                         <div class="span3">
-                            Case Insensitive &nbsp; <input type="checkbox" class="modifiers" id="chk-insensitive" />
+                            <label for="chk-insensitive"><input type="checkbox" class="modifiers" id="chk-insensitive" />&nbsp;Case Insensitive</label>
                         </div>
                         <div class="span3">
-                            Multiline &nbsp; <input type="checkbox" class="modifiers" id="chk-multiline" />
+                            <label for="chk-multiline"><input type="checkbox" class="modifiers" id="chk-multiline" />&nbsp;Multiline</label>
                         </div>
                     </div>
                     <br/>
@@ -47,6 +47,7 @@ tagLine: "My shot on Javascript regular expressions"
                 <div class="row-fluid">
                     Example patterns &nbsp;
                     <select id="cboExamples">
+                        <option value='(\w+)\s+\1(?=\b)'>Repeated word</option>
                         <option value='^\s*\[\s*(.+?)\s+"(.+?)"\s*\]\s*$'>PGN Tagline</option>
                         <option value='(?:(^0-0-0|^O-O-O)|(^0-0|^O-O)|(?:^([a-h])(?:([1-8])|(?:x([a-h][1-8])))(?:=?([NBRQ]))?)|(?:^([NBRQK])([a-h])?([1-8])?(x)?([a-h][1-8])))(?:(\+)|(#)|(\+\+))?$'>Chess move</option>
                     </select>

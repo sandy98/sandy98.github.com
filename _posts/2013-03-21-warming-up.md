@@ -9,8 +9,9 @@ tags: [newbies, introduction]
 
 I'm really starting to like this Jekyll blogging thing
 
-Hope I don't end up like this...
+It rewards as much as...
 
-<img style="display: inline;" src="http://placehold.it/50/ff0000/ffffff" />
+<!--<img class="img-circle" src="http://placehold.it/100.png/ff0000/ffffff?text=Jekyll%20Rocks" />-->
+<img class="img-circle" src="/img/100x100.png" />
 
 

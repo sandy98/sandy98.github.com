@@ -53,6 +53,8 @@ $ ->
     $('#regex-text').val $('#cboExamples').val()
     chkMatch()
 
+  $('.modifiers').css('vertical-align', 'top')
+
   $('#cboExamples')[0].selectedIndex = -1
 
   # i = setInterval chkMatch, 200
