@@ -8,7 +8,7 @@ group: navigation
 
     
 ## Github Projects
-* [Node Simple Router](https://github.com/sandy98/node-simple-router)
+* [Node Simple Router](http://sandy98.github.com/node-simple-router)
 * [Guaycuru Web Server](https://github.com/sandy98/guaycuru)
 
 ## Gists
