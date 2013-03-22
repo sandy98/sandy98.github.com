@@ -12,7 +12,7 @@ group: navigation
         <div class="row-fluid post-full">
           <div class="well">
             <div class="row-fluid"><a href="{{ BASE_PATH }}{{ post.url }}"><h5>{{post.title}}</h5></a></div>
-            <div class="row-fluid content">{{post.content | truncatewords: 20}}<br/>   ... <a href="{{ BASE_PATH }}{{ post.url }}">continue reading</a></div>
+            <div class="row-fluid content">{{post.content | truncatewords: 20}}<br/><br/>   ... <a href="{{ BASE_PATH }}{{ post.url }}">continue reading</a></div>
           </div>
         </div>
     {% elsif forloop.index == forloop.length %}
