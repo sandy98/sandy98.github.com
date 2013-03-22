@@ -9,8 +9,8 @@ pygments: true
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : Github Home
-tagline: All things Git
+title : Thinking IT
+tagline: also dreaming IT
 author :
   name : Domingo Savoretti
   email : esavoretti@gmail.com

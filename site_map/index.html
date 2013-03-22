@@ -1,0 +1,15 @@
+---
+layout: page
+title: "Site Map"
+tagline: "search by categories, tags or pages"
+description: "A map for the site, of course"
+group: navigation
+---
+{% include JB/setup %}
+
+<h2>Search by</h2>
+<ul>
+  {% assign pages_list = site.pages %}
+  {% assign group = 'site-map' %}
+  {% include JB/pages_list %}
+</ul>
