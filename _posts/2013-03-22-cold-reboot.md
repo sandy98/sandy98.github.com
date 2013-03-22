@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Cool Reboot"
+title: "Cold Reboot"
 tagline: "fresh start"
 description: "Starting Over"
 category: presentation
