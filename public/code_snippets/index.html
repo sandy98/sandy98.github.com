@@ -1,0 +1,17 @@
+---
+layout: page
+title: "Code Snippets"
+tagline: small proofs of concept
+description: ""
+group: navigation
+---
+{% include JB/setup %}
+
+<h2>Snippet pages</h2>
+<ul style="list-style: none;">
+  <li class="well well-small"><a href="/public/regex">Regexp Test <span class="label label-info pull-right">Coffeescript</span></a></li>
+  {% assign pages_list = site.pages %}
+  {% assign group = 'code-snippet' %}
+  {% include JB/lang_tagged_pages_list %}
+</ul>
+
