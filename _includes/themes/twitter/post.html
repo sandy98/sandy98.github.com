@@ -10,21 +10,30 @@
     <div class="content">
       {{ content }}
     </div>
+    <div class="row pull-right">
+      <h6 style="color: #aaaaaa; font-size: small; font-weight: bold; margin-right: 3em;">{{site.author.name}}</h6>
+    </div>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
 
   {% unless page.categories == empty %}
+    <div class="row">
     <ul class="tag_box inline">
       <li><i class="icon-folder-open"></i></li>
       {% assign categories_list = page.categories %}
       {% include JB/categories_list %}
     </ul>
+    </div>
   {% endunless %}  
 
   {% unless page.tags == empty %}
+    <div class="row">
     <ul class="tag_box inline">
       <li><i class="icon-tags"></i></li>
       {% assign tags_list = page.tags %}
       {% include JB/tags_list %}
     </ul>
+    </div>
   {% endunless %}  
 
     <hr>
