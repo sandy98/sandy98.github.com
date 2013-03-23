@@ -18,7 +18,7 @@ Well, that's enough chit-chat for now, time to get down to work.
 
 For the task at hand, I'll be using a "help drawer", that is the Code Snippets directory, which you may have spotted in the main menu. There you'll find code
 snippets of various lengths (something like a private local Gist) in some cases bound to its demo (as is the case in the first of them, Regexp Test)
-That's the one and lonely example so far, but more are making their way up. By the way, the attentive reader may have noticed that besides its place
+That's the one and only example so far, but more are making their way up. By the way, the attentive reader may have noticed that besides its place
 where it belongs, which is the Code Snippets section, the Rexexp Test has earned a place at the very main menu. The reason for this is that 
 a Regexp Tester has merits of its own, after all regular expressions are everywhere, and such a tool can come in handy, and despite the fact that you can find many
 of the kind in the web, well, I like mine and that's it. 
