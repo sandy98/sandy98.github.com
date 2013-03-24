@@ -9,8 +9,8 @@ pygments: true
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : Thinking IT
-tagline: also dreaming IT
+title : Thinking I.T.
+tagline: also dreaming I.T.
 author :
   name : Domingo Savoretti
   email : esavoretti@gmail.com
