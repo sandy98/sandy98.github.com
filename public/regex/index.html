@@ -62,7 +62,100 @@ lang: Coffeescript
         </div>
     </div>
 
+    <hr/>
+	<div class="row-fluid">
+	  <h3>Regular Expressions Tool</h3>
+	  <p>
+	    <strong>Usage:</strong> test regexes in two simple steps
+	    <ol>
+	      <li>Write the regex pattern in the upper input box</li>
+	      <li>Write the string against with the pattern will be matched in the text area below the options</li>
+	    </ol>
+	    When a match is obtained, the results will be show in the status area, otherwise it will show "NO MATCH"<br/><br/>
+	    <strong>Results explanation:</strong><br/>
+	    The main expression matched will appear in a blue label. If there are captured groups, consequent subexpressions
+	    will appear in a green label. For groups that aren't matched you get a red label stating "Null". 
+	    Try this with the chess move pattern, writing for example "Nf3", which is a valid chess move, and see the results<br/>
+	    If the Global option is checked, you just get a blue label for each time the main expression is matched in the
+	    provided string, so no green or red labels in this case.
+	  </p>
+	  <p>
+	    The three checkboxes are related to Javascript regexp flags, that is "global - g", "case insensitive -i" and "multiline - m". 
+	    Just go ahead and try them, along with the example patterns provided.<br/>
+	    If you want to learn more about Javascript regexes, I think that <a target="_blank" href="http://www.regular-expressions.info/javascript.html"> 
+	    Regular Expressions info</a> is a good place to start.
+	  </p>
+	</div>
+	<hr/>
+  <div class="row-fluid">
+    <p>This is the <a href="http://coffeescript.org" target="_blank">Coffeescript code</a> that makes the regex test widget work, 
+    being 'chkMatch' and 'show' the two key functions.</p>
+    <p>
+      <pre class="prettyprint">
+        <code>
+$ ->
+  nullify = ->
+    $('#result').css('background', 'pink')
+    $('#result').html '&lt;span class= "label label-important"&gt;NO MATCH&lt;/span&gt;'
+
+  show = (match) ->
+    $('#result').css('background', '#eeeeee')
+    len = match.length - 1
+    html = "<span class=\"label label-info\">#{match[0]}</span>&nbsp;"
+    if len > 0
+      for n in [1..len]
+        if (typeof match[n]) isnt "string"
+          postclass = 'label-important'
+          groupvalue = 'Null'
+        else
+    	    if $("#chk-global").attr("checked")
+            postclass = 'label-info'
+          else
+            postclass = 'label-success'
+          groupvalue = match[n]
+        html += "<span class=\"label #{postclass}\">#{groupvalue}</span>&nbsp;"
+    $('#result').html html
+
+  chkMatch = ->
+    try
+      return nullify() if $('#regex-text').val() is ''
+      modifiers = ""
+      if $("#chk-global").attr("checked")
+        modifiers += "g"
+      if $("#chk-insensitive").attr("checked")
+        modifiers += "i"
+      if $("#chk-multiline").attr("checked")
+        modifiers += "m"
+      regex = new RegExp $('#regex-text').val().replace(/\\/g, '\\'), modifiers
+      stri = $('#string-text').val()
+      m = stri.match regex
+      return nullify() if not m
+      show m
+
+    catch e
+      nullify()
+
+  $('#regex-text, #string-text').on 'keyup keypress change blur focus', chkMatch
+  $('.modifiers').on 'click', chkMatch
+  $('#cboExamples').on 'change click', (ev) ->
+    $('#regex-text').val $('#cboExamples').val()
+    chkMatch()
+
+  $('.modifiers').css('vertical-align', 'top')
+
+  $('#cboExamples')[0].selectedIndex = -1
+
+  # i = setInterval chkMatch, 200
+  chkMatch()
+
+        </code>
+      </pre>
+    </p>
+  </div>
+  <hr/>
+
 <!--scripts section-->
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
     <script type="text/javascript" src="js/coffee-script.min.js"></script>
     <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
