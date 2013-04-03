@@ -9,6 +9,7 @@ tags: [node.js community javascript developer]
 {% include JB/setup %}
 
 ### These numbers are awesome!
+#### Just taken from _npmjs.org_ site
 
 Node Packaged Modules
 
