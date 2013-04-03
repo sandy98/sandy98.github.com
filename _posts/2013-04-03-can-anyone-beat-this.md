@@ -10,8 +10,6 @@ tags: [node.js community javascript developer]
 
 ### These numbers are awesome!
 
-#### Figures just extracted from npmjs.org site
-
 Node Packaged Modules
 
 Total Packages: 26 686
