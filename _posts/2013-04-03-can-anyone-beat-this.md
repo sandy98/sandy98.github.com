@@ -13,7 +13,8 @@ tags: [node.js community javascript developer]
 
 Node Packaged Modules
 
-Total Packages: 26 686
+####Total Packages: 26 686
+
 
 1,474,867 downloads in the last day
 
@@ -22,32 +23,52 @@ Total Packages: 26 686
 29,886,496 downloads in the last month
 
 
-Recently Updated
-
-    0m kue
-    2m karma
-    2m domainit
-    9m uber-compiler
-    10m node-simple-router
-    15m grunt-saucelabs
-    16m grunt-vlt
-    20m sioux-ui-button
-    22m hubot-web
-    24m cloudify
+####Recently Updated
 
 
-Most Depended Upon
+0m kue
 
-    2608 underscore
-    1768 async
-    1611 request
-    1241 express
-    1240 coffee-script
-    1214 optimist
-    1062 commander
-    863 colors
-    612 uglify-js
-    560 mkdirp
+2m karma
+
+2m domainit
+
+9m uber-compiler
+
+10m node-simple-router
+
+15m grunt-saucelabs
+
+16m grunt-vlt
+
+20m sioux-ui-button
+
+22m hubot-web
+
+24m cloudify
+
+
+
+####Most Depended Upon
+
+2608 underscore
+
+1768 async
+
+1611 request
+
+1241 express
+
+1240 coffee-script
+
+1214 optimist
+
+1062 commander
+
+863 colors
+
+612 uglify-js
+
+560 mkdirp
 
 
 The above figures are just taken from [npm site](http://npmjs.org). I really wonder if these numbers - which are surely for real - have some equivalence in 
