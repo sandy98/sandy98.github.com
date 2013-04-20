@@ -10,6 +10,8 @@ group: navigation
 ## Github Projects
 * [Node Simple Router](http://sandy98.github.com/node-simple-router)
 * [Guaycuru Web Server](https://github.com/sandy98/guaycuru)
+* [Brunch with Puppets](https://github.com/sandy98/brunch-with-puppets)
+
 
 ## Gists
 <ul class="linkss-ul">
@@ -21,6 +23,9 @@ group: navigation
 
 ## JSFiddle
 * [My list of fiddles](http://jsfiddle.net/user/sandy98/fiddles/)
+
+## CoffeeScript snippets
+* [Switch construct test](http://coffeescript.org/#try:%0Aeval_a%20%3D%20%28a%29%20-%3E%20%0A%20%20switch%20a%0A%20%20%20%20when%201%2C%202%0A%20%20%20%20%20%20alert%20%22%23{a}%20is%20low%22%0A%20%20%20%20when%203%2C%204%0A%20%20%20%20%20%20alert%20%22%23{a}%20is%20so%2C%20so%22%0A%20%20%20%20else%0A%20%20%20%20%20%20alert%20%22%23{a}%20is%20high!%22%0A%20%20%20%20%0Aeval_a%28n%29%20for%20n%20in%20[1..5])
 
 <hr/>
 
