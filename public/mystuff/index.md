@@ -10,7 +10,9 @@ group: navigation
 ## Github Projects
 * [Node Simple Router](http://sandy98.github.com/node-simple-router)
 * [Guaycuru Web Server](https://github.com/sandy98/guaycuru)
-* [Brunch with Puppets](https://github.com/sandy98/brunch-with-puppets)
+* [Brunch with Puppets, a Marionette skeleton for Brunch](https://github.com/sandy98/brunch-with-puppets)
+* [Brunch with Wisp, a Wisp skeleton for Brunch](https://github.com/sandy98/brunch-with-wisp)
+* [Wisp-Brunch, a Brunch plugin to support Wisp source code with Brunch](https://github.com/sandy98/wisp-brunch)
 
 
 ## Gists
