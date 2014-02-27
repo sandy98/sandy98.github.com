@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Node-simple-router : Yet another minimalistic router for node.js" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Node-simple-router</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/sandy98/node-simple-router">Fork Me on GitHub</a>
+
+          <h1 id="project_title">Node-simple-router</h1>
+          <h2 id="project_tagline">Yet another minimalistic router for node.js</h2>
+
+          <section id="downloads">
+            <a class="zip_download_link" href="https://github.com/sandy98/node-simple-router/archive/master.zip">Download this project as a .zip file</a>
+            <a class="tar_download_link" href="https://github.com/sandy98/node-simple-router/tarball/master">Download this project as a tar.gz file</a>
+          </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <!--<h1>Node.js Simple Router - Yet another minimalistic router for node.js</h1>-->
+
+<h2>Install</h2>
+
+<p>From Node Package Manager:</p>
+
+<pre>
+  npm install node-simple-router
+</pre>
+
+<p>or from source:</p>
+
+<pre>
+  git clone git://github.com/sandy98/node-simple-router.git
+</pre>
+
+<h2>Purpose</h2>
+
+<p>Designed to provide routes to barebones node http server, Sinatra style (or Express.js router, for that matter) staying out
+of your way for the rest.</p>
+
+<p>Main target: restful APIs for single page applications.</p>
+
+<p>Source main file - router.coffee - and testing utility - test_router.coffee - are coffeescript source files. Should you prefer to
+work with javascript, just simply compile them (i.e. coffee -c router.coffee) provided you have installed coffee-script, which is as
+simple as </p><pre>sudo npm install coffee-script -g</pre>
+
+<h2>Basic Usage</h2>
+
+<div class="highlight">
+<pre><span class="c1"># Coffeescript version.</span><br/>
+<span class="c1"># Assumes usual installation with npm.</span>
+<span class="nv">Router = </span><span class="nx">require</span> <span class="s">'node-simple-router'</span>
+<span class="c1"># Alternative: assumes router.js - or router.coffee -</span>
+<span class="c1"># is located at the current working directory.</span>
+<span class="nv">#Router = </span><span class="nx">require</span> <span class="s">'./router'</span>
+
+<span class="nv">http   = </span><span class="nx">require</span> <span class="s">'http'</span>
+
+<span class="nv">router = </span><span class="nx">Router</span><span class="p">()</span>
+
+<span class="nx">router</span><span class="p">.</span><span class="nx">get</span> <span class="s">'/'</span><span class="p">,</span> <span class="nf">(request, response) -&gt;</span>
+  <span class="nx">response</span><span class="p">.</span><span class="nx">end</span> <span class="s">'Home page'</span>
+
+<span class="nx">router</span><span class="p">.</span><span class="nx">get</span> <span class="s">'/hello/:who'</span><span class="p">,</span> <span class="nf">(request, response) -&gt;</span>
+  <span class="nx">response</span><span class="p">.</span><span class="nx">end</span> <span class="s">"Hello, </span><span class="si">#{</span><span class="nx">request.params</span><span class="p">.</span><span class="nx">who</span><span class="si">}</span><span class="s">"</span>
+
+<span class="nv">server = </span><span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span> <span class="nx">router</span>
+
+<span class="nx">server</span><span class="p">.</span><span class="nx">listen</span> <span class="mi">3000</span>
+
+</pre>
+</div>
+
+
+<p>or, for the unlikely case you didn't yet discover/fall in love with coffeescript, the javascript version:</p>
+
+<div class="highlight">
+<pre><span class="c1">// Javascript version.</span><br/>
+<span class="c1">// Assumes usual installation with npm.</span>
+<span class="kd">var</span> <span class="nx">Router</span> <span class="o">=</span> <span class="nx">require</span> <span class="s">('node-simple-router')</span>
+<span class="c1">// Alternative: assumes router.js is located at the current working directory.</span>
+<span class="nv">//Router = </span><span class="nx">require</span> <span class="s">('./router')</span>
+
+<span class="kd">var</span> <span class="nx">http</span>   <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'http'</span><span class="p">)</span>
+
+<span class="kd">var</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">Router</span><span class="p">();</span>
+
+<span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">response</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s1">'Home page'</span><span class="p">);})</span>
+
+<span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'/hello/:who'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">response</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s2">"Hello, "</span> <span class="o">+</span> <span class="nx">request.params</span><span class="p">.</span><span class="nx">who</span><span class="p">);})</span>
+
+<span class="nx">server</span> <span class="o">=</span> <span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="nx">router</span><span class="p">)</span>
+
+<span class="nx">server</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">)</span>
+
+</pre>
+</div>
+
+<h2>Changelog</h2>
+<h3>< 0.2.4 All the basic stuff</h3>
+<h3>2012-09-07: v0.2.4 Added CGI support</h3>
+Currently the cgi dispatcher relies - as it's supposed to be - on the cgi process to provide the correct headers.
+Also, post and get - summed up in 'body' - must be readed by the cgi process via std input and converted to json 
+object by whatever means the cgi implementation provides. For instance, a python example could be implemented along 
+the lines:
+<div class="highlight">
+   <pre>	
+<span class="kn">import</span> <span class="nn">json</span><span class="o">,</span> <span class="nn">sys</span>
+
+<span class="n">body</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">body</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">"</span><span class="si">%s</span><span class="s"> = </span><span class="si">%s</span><span class="s">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">body</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+
+   </pre>      
+</div>
+
+<h2>Complementary topics</h2>
+
+<h3>I) Default options</h3>
+
+<ul>
+<li>
+<p><strong>logging</strong>: <em>true</em></p>
+
+<p>Turns off logging if defined false</p>
+</li>
+<li>
+<p><strong>log</strong>: <em>console.log</em></p>
+
+<p>Defines console.log as default logging output.</p>
+</li>
+<li>
+<p><strong>serve_static</strong>: <em>true</em></p>
+
+<p>Allows serving static content.</p>
+</li>
+<li>
+<p><strong>static_route</strong>: <em>"#{__dirname}/public"</em></p>
+
+<p>Defines root directory for static contents</p>
+</li>
+<li>
+<p><strong>list_dir</strong>: <em>true</em></p>
+
+<p>Allows/disallows directory listings</p>
+</li>
+</ul><p>Example:</p>
+
+<div class="highlight">
+<pre><span class="c1">//Disallows logging and directory listing, uses '/static' for static contents,</span>
+<span class="c1">//defaults remaining options</span>
+<span class="nx">var&nbsp;router&nbsp;=&nbsp;Router({logging:&nbsp;false,</span>
+<span class="nx">&nbsp;&nbsp;list_dir:&nbsp;false,</span>
+<span class="nx">&nbsp;&nbsp;static_route:&nbsp;__dirname&nbsp;+&nbsp;'/static'})</span>
+</pre>
+</div>
+
+
+<h3>II) Retrieving get/post data</h3>
+
+<p>Request get data may be retrieved from <em>request.get</em>, an object in JSON format</p>
+
+<p>Request post data is included, also in JSON format, in <em>request.post</em>, although in this case, if data came in an
+unrecognized format, it will be retrieved as raw data, without any conversion.</p>
+
+<p>Finally, <em>request.get</em> and <em>request.post</em> are joined in <em>request.body</em>, so if you don't care how the data got to the
+server, you can use that.</p>
+
+<h3>III) Todo list</h3>
+
+<ul>
+<li>   Making directory listing actually work</li>
+<li>   Preparing a nice template for directory listing.</li>
+<li>   Managing file uploads.</li>
+</ul><h2>Final note</h2>
+
+<p>Was this necessary?</p>
+
+<p>Probably not.</p>
+
+<p>But then again, there are a couple of reasons that I think make it worth, and perhaps, useful to someone who shares these.</p>
+
+<p>For one thing, <em>reinventing the wheel is not only fun, it's frequently highly educative</em>.</p>
+
+<p>Second, there are quite a bunch of routing solutions for node.js, but I found the ones that come bundled with node frameworks,
+although in most cases high quality and performant, also in many cases just a bit too much stuffed with features that either I didn't
+need or was unable to manage/tweak to my projects needs, hence the decision to roll my own, mainly aimed to serve as a lightweight
+component for a <em>restful API</em>.</p>
+
+<p>Last but not least, I wanted to <em>share the fun</em>.</p>
+
+<p><strong>Last minute note:</strong> Guaycuru web server, initially included as a test of the static resource serving capabilities of this router,
+is no longer present in current distribution. Instead, you can get it <a href="https://github.com/sandy98/guaycuru">here</a> or install it by 
+means of <em>npm</em>  </p>
+
+<h2>License</h2>
+
+<p>(The MIT License)</p>
+
+<p>Copyright (c) 2012 Ernesto Savoretti <a href="mailto:esavoretti@gmail.com">esavoretti@gmail.com</a></p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Node-simple-router maintained by <a href="https://github.com/sandy98">sandy98</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
