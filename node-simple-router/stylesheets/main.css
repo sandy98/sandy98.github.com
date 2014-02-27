@@ -73,7 +73,7 @@ code.bash {
 }
 
 .router {
-    background-image: url('img/router50.png');
+    background-image: url('https://raw.github.com/sandy98/node-simple-router/master/test/public/img/router50.png');
     background-position: top right;
     background-repeat: no-repeat;
     background-origin: content-box;
