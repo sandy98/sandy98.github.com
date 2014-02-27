@@ -73,7 +73,7 @@ code.bash {
 }
 
 .router {
-    background-image: url('/img/router50.png');
+    background-image: url('img/router50.png');
     background-position: top right;
     background-repeat: no-repeat;
     background-origin: content-box;
