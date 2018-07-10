@@ -18983,8 +18983,6 @@ exports.default = {
       }
     },
     [
-      _vm.debug ? _c("h4", [_vm._v(_vm._s(_vm.status_msg))]) : _vm._e(),
-      _vm._v(" "),
       _vm._l(8, function(y) {
         return _c(
           "div",
@@ -19164,7 +19162,9 @@ exports.default = {
             )
           })
         )
-      })
+      }),
+      _vm._v(" "),
+      _vm.debug ? _c("h4", [_vm._v(_vm._s(_vm.status_msg))]) : _vm._e()
     ],
     2
   )
@@ -19288,7 +19288,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '46025' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '38307' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
