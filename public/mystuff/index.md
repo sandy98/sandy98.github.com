@@ -14,6 +14,8 @@ group: navigation
 * [Brunch with Wisp, a Wisp skeleton for Brunch](https://github.com/sandy98/brunch-with-wisp)
 * [Wisp-Brunch, a Brunch plugin to support Wisp source code with Brunch](https://github.com/sandy98/wisp-brunch)
 * [node-rarfile Utility to handle RAR archive files within node](https://github.com/sandy98/node-rarfile)
+* [vue-chessboard. Yet another javascript chessboard, Vue.js flavor](https://github.com/sandy98/vue-chessboard)
+  [Demo](https://sandy98.github.com/public/vue-chessboard) 
 
 
 ## Gists
