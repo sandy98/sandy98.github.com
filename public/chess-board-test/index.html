@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ChessBoard + chess.js Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <!--[if lt IE 9]><script src="js/html5shiv-printshiv.js" media="all"></script><![endif]-->
+    <script src="https://cdn.jsdelivr.net/npm/@sandy98/chess.js@0.9.2/dist/chess.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@sandy98/chess-board@0.9.1/dist/chessboard.js"></script>
+</head>
+<body>
+    <div 
+      style="width: 60%; min-width: 60%; max-width: 60%; margin: 3em 20% auto;"
+    >
+	<chess-board>
+	  <div style="display: flex; height: 100%; flex-direction: column; justify-content: space-around; align-items: center; background: mintcream;">
+	    <h3>ChessBoard + chess.js Test Page</h3>
+	    <button onclick="board.undo();">Undo last move</button>
+	    <button onclick="board.resetGame();">Restart Game</button>
+	  </div>
+	</chess-board>
+    </div>
+    <script type="text/javascript">
+	document.body.onload = function() {
+	    setTimeout(
+		function() {
+		    window.board = document.querySelector("chess-board");
+		    board.setEngine(new Chess());
+		},
+		0
+	    );
+	    document.addEventListener('moveEvent', function(ev) {
+		// console.log(ev.detail);
+		if (board.getGame().game_over()) {
+		    var movesInfo = board.getGame().history({verbose: true});
+		    var lastMove = movesInfo[movesInfo.length - 1];
+		    var fullMoveNumber = lastMove.fullMoveNumber;
+		    var turn = lastMove.turn;
+		    var san = lastMove.san;
+		    var prefix = turn === 'b' ? '... ' : ' ';
+		    var fullSan = fullMoveNumber + ". " + prefix + san;
+		    
+		    setTimeout(function() {alert("Game over.\n" + fullSan + "\n" + board.getGame().tags.Result);}, 0);
+		}
+	    });
+	}
+    </script>
+</body>
+</html>
